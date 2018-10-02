@@ -14,7 +14,7 @@ class Aplication extends React.Component {
             bio: null,
             public_repos: null,
             public_gists: null,
-            followres: null,
+            followers: null,
             following: null
         }
     }
@@ -41,7 +41,7 @@ class Aplication extends React.Component {
             bio: user.bio,
             public_repos: user.public_repos,
             public_gists: user.public_gists,
-            followres: user.followres,
+            followers: user.followers,
             following: user.following
         });
         console.log(user);
@@ -84,7 +84,7 @@ class Aplication extends React.Component {
                         <p>Public Gists: {this.state.public_gists}</p>
                     </li>
                     <li className="followres">
-                        <p>Followres: {this.state.followres}</p>
+                        <p>Followers: {this.state.followers}</p>
                     </li>
                     <li className="following">
                         <p>Following: {this.state.following}</p>
