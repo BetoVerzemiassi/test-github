@@ -60,7 +60,8 @@ class Aplication extends React.Component {
             name: repositories.name,
             description: repositories.description,
             size: repositories.size,
-            url: repositories.url
+            url: repositories.url,
+            language: repositories.language
         });
         console.log(repositories);
     }
@@ -115,16 +116,19 @@ class Aplication extends React.Component {
              <div>
                  <ul className="repoResults">
                      <li className="repo-name">
-                         <p>Name: {this.state.name}</p>
+                         <p><label>Name:</label> {this.state.name}</p>
                      </li>
                      <li className="repo-description">
-                         <p>Description: {this.state.description}</p>
+                         <p><label>Description:</label> {this.state.description}</p>
                      </li>
                      <li className="repo-size">
-                         <p>Size: {this.state.size}</p>
+                         <p><label>Size:</label> {this.state.size}</p>
                      </li>
                      <li className="repo-url">
-                         <p>Url: {this.state.url}</p>
+                         <p><label>Url:</label> {this.state.url}</p>
+                     </li>
+                     <li>
+                         <p><label>Language:</label> {this.state.language}</p>
                      </li>
                  </ul>
              </div>
