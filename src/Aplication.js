@@ -21,7 +21,7 @@ class Aplication extends React.Component {
     }
 
     getUser(username) {
-        return fetch(`https://api.github.com/users/${username}?client_id=15024194`)
+        return fetch(`https://api.github.com/users/${username}`)
             .then(response => response.json())
             .then(response => {
                 return response;
@@ -76,37 +76,37 @@ class Aplication extends React.Component {
                         <img src={this.state.avatar_url}/>
                     </li>
                     <li className="name">
-                        <p>Name: {this.state.username}</p>
+                        <p><label>Name:</label> {this.state.username}</p>
                     </li>
                     <li className="type">
-                        <p>Type: {this.state.type}</p>
+                        <p><label>Type:</label> {this.state.type}</p>
                     </li>
                     <li className="company">
-                        <p>Company: {this.state.company}</p>
+                        <p><label>Company:</label> {this.state.company}</p>
                     </li>
                     <li className="blog">
-                        <p>Blog: {this.state.blog}</p>
+                        <p><label>Blog:</label> {this.state.blog}</p>
                     </li>
                     <li className="location">
-                        <p>Location: {this.state.location}</p>
+                        <p><label>Location:</label> {this.state.location}</p>
                     </li>
                     <li className="email">
-                        <p>E-mail: {this.state.email}</p>
+                        <p><label>E-mail:</label> {this.state.email}</p>
                     </li>
                     <li className="bio">
-                        <p>Bio: {this.state.bio}</p>
+                        <p><label>Bio:</label> {this.state.bio}</p>
                     </li>
                     <li className="publicRepos">
-                        <p>Public Repos: {this.state.public_repos}</p>
+                        <p><label>Public Repos:</label> {this.state.public_repos}</p>
                     </li>
                     <li className="publicGists">
-                        <p>Public Gists: {this.state.public_gists}</p>
+                        <p><label>Public Gists:</label> {this.state.public_gists}</p>
                     </li>
                     <li className="followres">
-                        <p>Followers: {this.state.followers}</p>
+                        <p><label>Followers:</label> {this.state.followers}</p>
                     </li>
                     <li className="following">
-                        <p>Following: {this.state.following}</p>
+                        <p><label>Following:</label> {this.state.following}</p>
                     </li>
                 </ul>
             </div>

@@ -68,13 +68,20 @@ input[name="search"] {
   left: 780px;
 }
 
-.infoProfile li {
+.infoProfile label {
   list-style: none;
   font-family: fantasy;
   font-size: 25px;
   font-style: italic;
-  color: #fff;
+  color: #b22d3c;
   width: 500px;
+}
+
+.infoProfile li p {
+  font-family: fantasy;
+  font-size: 25px;
+  font-style: italic;
+  color: #fff;
 }
 
 .name,
@@ -89,8 +96,7 @@ input[name="search"] {
 .followres,
 .following {
   position: relative;
-  left: 300px;
-  bottom: 240px;
+  bottom: 300px;
 }
 
 .infoProfile {
@@ -107,7 +113,11 @@ input[name="search"] {
 .avatar img {
   border-radius: 50%;
   width: 280px;
-  height: 220px;
+  border-radius: 50%;
+  width: 280px;
+  position: relative;
+  left: 480px;
+  border: 2px solid #b22d3c;
 }
 
 .repoResults {
@@ -116,7 +126,7 @@ input[name="search"] {
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     border-radius: 5%;
-    color: #fff;
+    color: #b22d3c;
     width: 430px;
     position: relative;
     bottom: 960px;
