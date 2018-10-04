@@ -26,7 +26,7 @@ class Repositories extends React.Component {
         }
     }
 
-    getUser(username) {
+    getRepos(username, repos) {
         return fetch(`https://api.github.com/users/${username}/repos`)
             .then(response => response.json())
             .then(response => {
@@ -34,9 +34,9 @@ class Repositories extends React.Component {
             })
     }
 
-    async handleSubmit(e) {
+    async handleClick(e) {
         e.preventDefault();
-        let repos = await this.getUser(this.refs.username.value);
+        let repos = await this.getRepos(this.refs.repos);
         this.setState({
             avatar_url: repos.avatar_url,
             description: repos.description,
@@ -63,7 +63,7 @@ class Repositories extends React.Component {
 
     render() {
         let repos;
-        if(this.state.username) {
+        if(this.state.repos) {
             repos =
             <div>
                 <ul className="infoRepos">
@@ -82,7 +82,7 @@ class Repositories extends React.Component {
         return (
             <div className="repositories">
                 <h1 className="listRepos">Lista de Repositórios do Usuário</h1>
-                <button className="button-Repos" onSubmit={e => this.handleSubmit(e)}>Repositórios</button>
+                <button className="button-Repos" onClick={e => this.handleClick(e)}>Repositórios</button>
             </div>
         );
     }

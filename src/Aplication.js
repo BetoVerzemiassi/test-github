@@ -15,12 +15,21 @@ class Aplication extends React.Component {
             public_repos: null,
             public_gists: null,
             followers: null,
-            following: null
+            following: null,
+            name: null
         }
     }
 
     getUser(username) {
-        return fetch(`https://api.github.com/users/${username}`)
+        return fetch(`https://api.github.com/users/${username}?client_id=15024194`)
+            .then(response => response.json())
+            .then(response => {
+                return response;
+            })
+    }
+
+    getUserRepos(username) {
+        return fetch(`https://api.github.com/users/${username}/repos`)
             .then(response => response.json())
             .then(response => {
                 return response;
@@ -45,10 +54,20 @@ class Aplication extends React.Component {
             following: user.following
         });
         console.log(user);
+
+        let repositories = await this.getUserRepos(this.refs.username.value);
+        this.setState({
+            name: repositories.name,
+            description: repositories.description,
+            size: repositories.size,
+            url: repositories.url
+        });
+        console.log(repositories);
     }
 
     render() {
         let user;
+        let repositories;
         if(this.state.username) {
             user =
             <div>
@@ -91,21 +110,41 @@ class Aplication extends React.Component {
                     </li>
                 </ul>
             </div>
+
+            repositories =
+             <div>
+                 <ul className="repoResults">
+                     <li className="repo-name">
+                         <p>Name: {this.state.name}</p>
+                     </li>
+                     <li className="repo-description">
+                         <p>Description: {this.state.description}</p>
+                     </li>
+                     <li className="repo-size">
+                         <p>Size: {this.state.size}</p>
+                     </li>
+                     <li className="repo-url">
+                         <p>Url: {this.state.url}</p>
+                     </li>
+                 </ul>
+             </div>
         }
+
         return (
             <div className="search">
                 <div className="header">
                     <h1 className="search-user">Encontre um usuário no GitHub.</h1>
                     <form id="search" onSubmit={e => this.handleSubmit(e)}>
-                        <input ref="username" name="search" type="text"/>
+                        <input ref='username' name='search' type='text' placeholder='username'/>
                         <button className="button-search">Buscar</button>
                     </form>
                 </div>
-                <div className="descriptionUser">
-                    <ul>
-                        {user}
-                    </ul>
-                </div>
+                <ul>
+                    {user}
+                </ul>
+                <ul>
+                    {repositories}
+                </ul>
             </div>
         );
     }

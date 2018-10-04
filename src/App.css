@@ -109,3 +109,23 @@ input[name="search"] {
   width: 280px;
   height: 220px;
 }
+
+.repoResults {
+    padding-top: 25px;
+    background-color: #111010;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    border-radius: 5%;
+    color: #fff;
+    width: 430px;
+    position: relative;
+    bottom: 960px;
+}
+
+.repoResults li {
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 16px;
+  position: relative;
+  bottom: 25px;
+}
