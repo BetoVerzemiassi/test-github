@@ -16,7 +16,16 @@ class Aplication extends React.Component {
             public_gists: null,
             followers: null,
             following: null,
-            name: null
+            name: null,
+            description: null,
+            size: null,
+            url: null,
+            language: null,
+            login: null,
+            id: null,
+            starred_url: null,
+            commits_url: null,
+            git_url: null
         }
     }
 
@@ -130,6 +139,7 @@ class Aplication extends React.Component {
                     </li>
                 </ul>
             </div>
+
 
             repositories =
              <div>
