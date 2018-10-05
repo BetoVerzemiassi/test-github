@@ -36,6 +36,14 @@ class Aplication extends React.Component {
             })
     }
 
+    getUserStarred(username) {
+        return fetch(`https://api.github.com/users/${username}/starred`)
+            .then(response => response.json())
+            .then(response => {
+                return response;
+            })
+    }
+
     async handleSubmit(e) {
         e.preventDefault();
         let user = await this.getUser(this.refs.username.value);
@@ -64,11 +72,22 @@ class Aplication extends React.Component {
             language: repositories.language
         });
         console.log(repositories);
+
+        let starred = await this.getUserStarred(this.refs.username.value);
+        this.setState({
+            login: starred.login,
+            id: starred.id,
+            starred_url: starred.starred_url,
+            commits_url: starred.commits_url,
+            git_url: starred.git_url
+        });
+        console.log(starred);
     }
 
     render() {
         let user;
         let repositories;
+        let starred;
         if(this.state.username) {
             user =
             <div>
@@ -115,6 +134,7 @@ class Aplication extends React.Component {
             repositories =
              <div>
                  <ul className="repoResults">
+                     <h1>Info Repositories</h1>
                      <li className="repo-name">
                          <p><label>Name:</label> {this.state.name}</p>
                      </li>
@@ -127,9 +147,31 @@ class Aplication extends React.Component {
                      <li className="repo-url">
                          <p><label>Url:</label> {this.state.url}</p>
                      </li>
-                     <li>
+                     <li className="repo-language">
                          <p><label>Language:</label> {this.state.language}</p>
                      </li>
+                 </ul>
+             </div>
+
+             starred =
+             <div>
+                 <ul className="infoStarred">
+                    <h1>Info Starred</h1>
+                    <li className="starred-login">
+                        <p><label>Login:</label> {this.state.language}</p>
+                    </li>
+                    <li className="starred-id">
+                        <p><label>ID:</label> {this.state.language}</p>
+                    </li>
+                    <li className="starred-url">
+                        <p><label>Starred_URL:</label> {this.state.language}</p>
+                    </li>
+                    <li className="starred-commits">
+                        <p><label>Commits_URL:</label> {this.state.language}</p>
+                    </li>
+                    <li className="starred-git">
+                        <p><label>Git_URL:</label> {this.state.language}</p>
+                    </li>
                  </ul>
              </div>
         }
@@ -148,6 +190,9 @@ class Aplication extends React.Component {
                 </ul>
                 <ul>
                     {repositories}
+                </ul>
+                <ul>
+                    {starred}
                 </ul>
             </div>
         );

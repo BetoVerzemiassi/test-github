@@ -68,6 +68,10 @@ input[name="search"] {
   left: 780px;
 }
 
+.infoProfile li{
+  list-style: none;
+}
+
 .infoProfile label {
   list-style: none;
   font-family: fantasy;
@@ -101,7 +105,6 @@ input[name="search"] {
 
 .infoProfile {
   padding-top: 25px;
-  margin: 0 auto;
   width: 810px;
   background-color: #111010;
   -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
@@ -121,21 +124,48 @@ input[name="search"] {
 }
 
 .repoResults {
+    margin: 0 auto;
     padding-top: 25px;
     background-color: #111010;
     -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-    border-radius: 5%;
+    border-radius: 2%;
     color: #b22d3c;
-    width: 430px;
+    width: 660px;;
     position: relative;
-    bottom: 960px;
+    bottom: 1003px;
+    left: 300px;
 }
 
-.repoResults li {
+.infoStarred {
+    margin: 0 auto;
+    padding-top: 25px;
+    background-color: #111010;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    border-radius: 2%;
+    color: #b22d3c;
+    width: 660px;;
+    position: relative;
+    bottom: 1003px;
+    left: 300px;
+}
+
+.repoResults li,
+.infoStarred li {
   font-family: fantasy;
   font-style: italic;
   font-size: 16px;
   position: relative;
   bottom: 25px;
+}
+
+.repoResults h1,
+.infoStarred h1 {
+  text-align: center;
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 40px;
+  position: relative;
+  bottom: 30px;
 }
