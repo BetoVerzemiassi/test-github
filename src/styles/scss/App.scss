@@ -1,10 +1,13 @@
 .container {
 	.info-repos,
 	.info-starred {
-	  margin: 30px;
-	  font-family: fantasy;
-	  font-style: italic;
-	  font-size: 25px;
+	  	margin: 30px;
+	 	font-family: fantasy;
+	  	font-style: italic;
+	  	font-size: 25px;
+	  	box-shadow: 0px 0px 1px 2px #000;
+	  	border-top-right-radius: 10px;
+    	border-bottom-left-radius: 10px;
 	}
 
 	.infoProfile {
@@ -33,7 +36,16 @@
   }
 
   #search {
-      text-align: center;
+	  text-align: center;
+	  .align-input {
+		  input {
+			  border-radius: 7px;
+		  }
+	  }
+
+	  .search-button {
+		  margin-left: 5px;
+	  }
   }
 
   .align-input,

@@ -3,7 +3,10 @@
   margin: 30px;
   font-family: fantasy;
   font-style: italic;
-  font-size: 25px; }
+  font-size: 25px;
+  box-shadow: 0px 0px 1px 2px #000;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px; }
 .container .infoProfile th[scope="col"] {
   font-family: fantasy;
   font-style: italic;
@@ -23,6 +26,10 @@
 
 #search {
   text-align: center; }
+  #search .align-input input {
+    border-radius: 7px; }
+  #search .search-button {
+    margin-left: 5px; }
 
 .align-input,
 .info-repos,
