@@ -1,0 +1,97 @@
+.container {
+	.info-repos,
+	.info-starred {
+	  margin: 30px;
+	  font-family: fantasy;
+	  font-style: italic;
+	  font-size: 25px;
+	}
+
+	.infoProfile {
+		th[scope="col"] {
+			font-family: fantasy;
+			font-style: italic;
+			text-align: center;
+		}
+	}
+}
+
+.search-user {
+	.search-button {
+		margin-left: 8px;
+		font-family: fantasy;
+		font-style: italic;
+	}
+}
+
+ .search-user,
+  .listRepos {
+    text-align: center;
+    font-family: fantasy;
+    font-style: italic;
+    font-size: 25px;
+  }
+
+  #search {
+      text-align: center;
+  }
+
+  .align-input,
+  .info-repos,
+  .info-starred {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center
+  }
+
+  input[name="search"] {
+      border-radius: 12px;
+      width: 400px;
+      height: 30px;
+  }
+
+  	.infoProfile {
+
+		.avatar {
+			img {
+				border-radius: 50%;
+				width: 280px;
+			}
+		}
+
+		li	{
+			list-style: none;
+			position: relative;
+			top: 12px;
+
+			.name,
+			.type,
+			.company,
+			.blog,
+			.location,
+			.email,
+			.bio,
+			.publicRepos,
+			.publicGists,
+			.followres,
+			.following {
+				position: relative;
+				bottom: 300px;
+			}
+
+			p {
+				font-family: fantasy;
+				font-size: 25px;
+				font-style: italic;
+				color: #000;
+			}
+
+			label {
+				font-family: fantasy;
+				font-size: 25px;
+				font-style: italic;
+				color: #b22d3c;
+			  }
+		}
+	}

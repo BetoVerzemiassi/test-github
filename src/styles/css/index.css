@@ -1,0 +1,71 @@
+.container .info-repos,
+.container .info-starred {
+  margin: 30px;
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 25px; }
+.container .infoProfile th[scope="col"] {
+  font-family: fantasy;
+  font-style: italic;
+  text-align: center; }
+
+.search-user .search-button {
+  margin-left: 8px;
+  font-family: fantasy;
+  font-style: italic; }
+
+.search-user,
+.listRepos {
+  text-align: center;
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 25px; }
+
+#search {
+  text-align: center; }
+
+.align-input,
+.info-repos,
+.info-starred {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+input[name="search"] {
+  border-radius: 12px;
+  width: 400px;
+  height: 30px; }
+
+.infoProfile .avatar img {
+  border-radius: 50%;
+  width: 280px; }
+.infoProfile li {
+  list-style: none;
+  position: relative;
+  top: 12px; }
+  .infoProfile li .name,
+  .infoProfile li .type,
+  .infoProfile li .company,
+  .infoProfile li .blog,
+  .infoProfile li .location,
+  .infoProfile li .email,
+  .infoProfile li .bio,
+  .infoProfile li .publicRepos,
+  .infoProfile li .publicGists,
+  .infoProfile li .followres,
+  .infoProfile li .following {
+    position: relative;
+    bottom: 300px; }
+  .infoProfile li p {
+    font-family: fantasy;
+    font-size: 25px;
+    font-style: italic;
+    color: #000; }
+  .infoProfile li label {
+    font-family: fantasy;
+    font-size: 25px;
+    font-style: italic;
+    color: #b22d3c; }
+
+/*# sourceMappingURL=index.css.map */

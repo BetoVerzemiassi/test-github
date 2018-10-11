@@ -25,7 +25,10 @@ class Aplication extends React.Component {
             id: null,
             starred_url: null,
             commits_url: null,
-            git_url: null
+            git_url: null,
+            infoRepos: [
+
+            ]
         }
     }
 
@@ -77,8 +80,8 @@ class Aplication extends React.Component {
             name: repositories.name,
             description: repositories.description,
             size: repositories.size,
-            url: repositories.url,
-            language: repositories.language
+            language: repositories.language,
+            url: repositories.url
         });
         console.log(repositories);
 
@@ -150,8 +153,8 @@ class Aplication extends React.Component {
                                         <th scope="col">NAME</th>
                                         <th scope="col">DESCRIPTION</th>
                                         <th scope="col">SIZE</th>
-                                        <th scope="col">URL</th>
                                         <th scope="col">LANGUAGE</th>
+                                        <th scope="col">URL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -159,8 +162,8 @@ class Aplication extends React.Component {
                                         <td>{this.state.name}</td>
                                         <td>{this.state.description}</td>
                                         <td>{this.state.size}</td>
-                                        <td>{this.state.url}</td>
                                         <td>{this.state.language}</td>
+                                        <td>{this.state.url}</td>
                                     </tr>
                                 </tbody>
                             </table>
