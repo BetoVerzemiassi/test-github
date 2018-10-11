@@ -70,22 +70,22 @@ input[name="search"] {
 
 .infoProfile li{
   list-style: none;
+  position: relative;
+  top: 12px;
 }
 
 .infoProfile label {
-  list-style: none;
   font-family: fantasy;
   font-size: 25px;
   font-style: italic;
   color: #b22d3c;
-  width: 500px;
 }
 
 .infoProfile li p {
   font-family: fantasy;
   font-size: 25px;
   font-style: italic;
-  color: #fff;
+  color: #000;
 }
 
 .name,
@@ -103,25 +103,10 @@ input[name="search"] {
   bottom: 300px;
 }
 
-.infoProfile {
-  padding-top: 25px;
-  width: 810px;
-  background-color: #111010;
-  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-  -moz-box-shadow:    9px 7px 5px rgba(50, 50, 50, 0.77);
-  box-shadow:         9px 7px 5px rgba(50, 50, 50, 0.77);
-  border-radius: 10%;
-}
-
 .avatar img {
   border-radius: 50%;
   width: 280px;
-  border-radius: 50%;
-  width: 280px;
-  position: relative;
-  left: 480px;
-  border: 2px solid #b22d3c;
-}
+  }
 
 .repoResults {
     margin: 0 auto;
@@ -168,4 +153,27 @@ input[name="search"] {
   font-size: 40px;
   position: relative;
   bottom: 30px;
+}
+
+.align-input,
+.info-repos,
+.info-starred {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.search-button {
+  margin-left: 8px;
+  font-family: fantasy;
+  font-style: italic;
+}
+
+.info-repos,
+.info-starred {
+  margin: 15px;
+  font-family: fantasy;
+  font-style: italic;
+  font-size: 25px;
 }

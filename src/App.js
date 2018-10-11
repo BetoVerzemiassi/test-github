@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Aplication from "./Aplication"
-// import Repositories from "./Repositories"
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import Aplication from "./Aplication";
 
 class App extends Component {
   render() {

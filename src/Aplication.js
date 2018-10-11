@@ -99,115 +99,128 @@ class Aplication extends React.Component {
         let starred;
         if(this.state.username) {
             user =
-            <div>
-                <ul className="infoProfile">
-                    <li className="avatar">
-                        <img src={this.state.avatar_url}/>
-                    </li>
-                    <li className="name">
-                        <p><label>Name:</label> {this.state.username}</p>
-                    </li>
-                    <li className="type">
-                        <p><label>Type:</label> {this.state.type}</p>
-                    </li>
-                    <li className="company">
-                        <p><label>Company:</label> {this.state.company}</p>
-                    </li>
-                    <li className="blog">
-                        <p><label>Blog:</label> {this.state.blog}</p>
-                    </li>
-                    <li className="location">
-                        <p><label>Location:</label> {this.state.location}</p>
-                    </li>
-                    <li className="email">
-                        <p><label>E-mail:</label> {this.state.email}</p>
-                    </li>
-                    <li className="bio">
-                        <p><label>Bio:</label> {this.state.bio}</p>
-                    </li>
-                    <li className="publicRepos">
-                        <p><label>Public Repos:</label> {this.state.public_repos}</p>
-                    </li>
-                    <li className="publicGists">
-                        <p><label>Public Gists:</label> {this.state.public_gists}</p>
-                    </li>
-                    <li className="followres">
-                        <p><label>Followers:</label> {this.state.followers}</p>
-                    </li>
-                    <li className="following">
-                        <p><label>Following:</label> {this.state.following}</p>
-                    </li>
-                </ul>
+            <div className="card">
+                <div className="card-body">
+                    <ul className="infoProfile">
+                        <li className="avatar">
+                            <img className="card-img-top rounded float-right img-thumbnail rounded-circle" src={this.state.avatar_url}/>
+                        </li>
+                        <li className="name">
+                            <p><label>Nome:</label> {this.state.username}</p>
+                        </li>
+                        <li className="type">
+                            <p><label>Tipo de Usuário:</label> {this.state.type}</p>
+                        </li>
+                        <li className="company">
+                            <p><label>Empresa:</label> {this.state.company}</p>
+                        </li>
+                        <li className="blog">
+                            <p><label>Blog:</label> {this.state.blog}</p>
+                        </li>
+                        <li className="location">
+                            <p><label>Localização:</label> {this.state.location}</p>
+                        </li>
+                        <li className="email">
+                            <p><label>E-mail:</label> {this.state.email}</p>
+                        </li>
+                        <li className="bio">
+                            <p><label>Biografia:</label> {this.state.bio}</p>
+                        </li>
+                        <li className="publicRepos">
+                            <p><label>Repositórios Públicos:</label> {this.state.public_repos}</p>
+                        </li>
+                        <li className="publicGists">
+                            <p><label>Repositórios Privados:</label> {this.state.public_gists}</p>
+                        </li>
+                        <li className="followres">
+                            <p><label>Seguidores:</label> {this.state.followers}</p>
+                        </li>
+                        <li className="following">
+                            <p><label>Seguindo:</label> {this.state.following}</p>
+                        </li>
+                        <ul>
+                            <li>
+                                <h1 className="h1 info-repos">Info Repositories</h1>
+                            </li>
+                        </ul>
+                        <table className="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">DESCRIPTION</th>
+                                    <th scope="col">SIZE</th>
+                                    <th scope="col">URL</th>
+                                    <th scope="col">LANGUAGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{this.state.name}</td>
+                                    <td>{this.state.description}</td>
+                                    <td>{this.state.size}</td>
+                                    <td>{this.state.url}</td>
+                                    <td>{this.state.language}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul>
+                            <li>
+                                <h1 className="h1 info-starred">Info Starred</h1>
+                            </li>
+                        </ul>
+                        <table className="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">LOGIN</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">STARRED_URL</th>
+                                    <th scope="col">COMMITS_URL</th>
+                                    <th scope="col">GIT_URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{this.state.login}</td>
+                                    <td>{this.state.id}</td>
+                                    <td>{this.state.starred_url}</td>
+                                    <td>{this.state.commits_url}</td>
+                                    <td>{this.state.git_url}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
             </div>
-
-
-            repositories =
-             <div>
-                 <ul className="repoResults">
-                     <h1>Info Repositories</h1>
-                     <li className="repo-name">
-                         <p><label>Name:</label> {this.state.name}</p>
-                     </li>
-                     <li className="repo-description">
-                         <p><label>Description:</label> {this.state.description}</p>
-                     </li>
-                     <li className="repo-size">
-                         <p><label>Size:</label> {this.state.size}</p>
-                     </li>
-                     <li className="repo-url">
-                         <p><label>Url:</label> {this.state.url}</p>
-                     </li>
-                     <li className="repo-language">
-                         <p><label>Language:</label> {this.state.language}</p>
-                     </li>
-                 </ul>
-             </div>
-
-             starred =
-             <div>
-                 <ul className="infoStarred">
-                    <h1>Info Starred</h1>
-                    <li className="starred-login">
-                        <p><label>Login:</label> {this.state.language}</p>
-                    </li>
-                    <li className="starred-id">
-                        <p><label>ID:</label> {this.state.language}</p>
-                    </li>
-                    <li className="starred-url">
-                        <p><label>Starred_URL:</label> {this.state.language}</p>
-                    </li>
-                    <li className="starred-commits">
-                        <p><label>Commits_URL:</label> {this.state.language}</p>
-                    </li>
-                    <li className="starred-git">
-                        <p><label>Git_URL:</label> {this.state.language}</p>
-                    </li>
-                 </ul>
-             </div>
         }
 
         return (
-            <div className="search">
-                <div className="header">
-                    <h1 className="search-user">Encontre um usuário no GitHub.</h1>
-                    <form id="search" onSubmit={e => this.handleSubmit(e)}>
-                        <input ref='username' name='search' type='text' placeholder='username'/>
-                        <button className="button-search">Buscar</button>
-                    </form>
+            <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm">
+                            <div className="header">
+                                <h1 className="h1 search-user">Encontre um usuário no GitHub.</h1>
+                                <form id="search" onSubmit={e => this.handleSubmit(e)}>
+                                    <div className="form-group form-row align-input">
+                                        <div className="input-group input-group-lg col-md-6">
+                                            <input className="form-control text-center" ref='username' name='search' type='text' placeholder='username'/>
+                                            <button className="btn btn-primary search-button">Buscar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        {user}
+                    </ul>
                 </div>
-                <ul>
-                    {user}
-                </ul>
-                <ul>
-                    {repositories}
-                </ul>
-                <ul>
-                    {starred}
-                </ul>
             </div>
         );
     }
 }
 
+
+
 //Exportando para que seja um módulo.
-export default Aplication
+export default Aplication;
