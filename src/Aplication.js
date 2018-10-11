@@ -143,51 +143,55 @@ class Aplication extends React.Component {
                                 <h1 className="h1 info-repos">Info Repositories</h1>
                             </li>
                         </ul>
-                        <table className="table table-bordered table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col">NAME</th>
-                                    <th scope="col">DESCRIPTION</th>
-                                    <th scope="col">SIZE</th>
-                                    <th scope="col">URL</th>
-                                    <th scope="col">LANGUAGE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{this.state.name}</td>
-                                    <td>{this.state.description}</td>
-                                    <td>{this.state.size}</td>
-                                    <td>{this.state.url}</td>
-                                    <td>{this.state.language}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table className="table table-hover table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">NAME</th>
+                                        <th scope="col">DESCRIPTION</th>
+                                        <th scope="col">SIZE</th>
+                                        <th scope="col">URL</th>
+                                        <th scope="col">LANGUAGE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{this.state.name}</td>
+                                        <td>{this.state.description}</td>
+                                        <td>{this.state.size}</td>
+                                        <td>{this.state.url}</td>
+                                        <td>{this.state.language}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <ul>
                             <li>
                                 <h1 className="h1 info-starred">Info Starred</h1>
                             </li>
                         </ul>
-                        <table className="table table-bordered table-dark">
-                            <thead>
-                                <tr>
-                                    <th scope="col">LOGIN</th>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">STARRED_URL</th>
-                                    <th scope="col">COMMITS_URL</th>
-                                    <th scope="col">GIT_URL</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{this.state.login}</td>
-                                    <td>{this.state.id}</td>
-                                    <td>{this.state.starred_url}</td>
-                                    <td>{this.state.commits_url}</td>
-                                    <td>{this.state.git_url}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table className="table table-hover table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">LOGIN</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">STARRED_URL</th>
+                                        <th scope="col">COMMITS_URL</th>
+                                        <th scope="col">GIT_URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{this.state.login}</td>
+                                        <td>{this.state.id}</td>
+                                        <td>{this.state.starred_url}</td>
+                                        <td>{this.state.commits_url}</td>
+                                        <td>{this.state.git_url}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </ul>
                 </div>
             </div>

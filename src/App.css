@@ -172,7 +172,7 @@ input[name="search"] {
 
 .info-repos,
 .info-starred {
-  margin: 15px;
+  margin: 30px;
   font-family: fantasy;
   font-style: italic;
   font-size: 25px;
