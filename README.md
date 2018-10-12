@@ -4,7 +4,7 @@
   <img src="./react-test-github.gif">
 </p>
 
-##Utilizado para o Desenvolvimento
+## Utilizado para o Desenvolvimento
 
 * API GitHub V3
 * Sass
