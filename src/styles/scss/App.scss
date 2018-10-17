@@ -14,7 +14,24 @@
 		th[scope="col"] {
 			font-family: fantasy;
 			font-style: italic;
+			font-size: 25px;
 			text-align: center;
+			width: 100px;
+		}
+	}
+
+	tbody {
+		td {
+			text-align: center;
+			font-family: fantasy;
+			font-size: 18px;
+			font-style: italic;
+			color: #b22d3c;
+		}
+
+		a:link, a:visited {
+			text-decoration: none;
+			color: #fff;
 		}
 	}
 }

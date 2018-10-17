@@ -21,14 +21,13 @@ class Aplication extends React.Component {
             size: null,
             url: null,
             language: null,
-            login: null,
             id: null,
             starred_url: null,
             commits_url: null,
             git_url: null,
-            infoRepos: [
-
-            ]
+            name: null,
+            infoRepos: [],
+            infoReposStar: []
         }
     }
 
@@ -44,14 +43,21 @@ class Aplication extends React.Component {
         return fetch(`https://api.github.com/users/${username}/repos`)
             .then(response => response.json())
             .then(response => {
+                this.setState({
+                    infoRepos: response,
+                })
                 return response;
             })
     }
+
 
     getUserStarred(username) {
         return fetch(`https://api.github.com/users/${username}/starred`)
             .then(response => response.json())
             .then(response => {
+                this.setState({
+                    infoReposStar: response,
+                })
                 return response;
             })
     }
@@ -81,25 +87,22 @@ class Aplication extends React.Component {
             description: repositories.description,
             size: repositories.size,
             language: repositories.language,
-            url: repositories.url
+            html_url: repositories.html_url
         });
         console.log(repositories);
 
         let starred = await this.getUserStarred(this.refs.username.value);
         this.setState({
-            login: starred.login,
+            name: starred.name,
+            description: starred.description,
             id: starred.id,
-            starred_url: starred.starred_url,
-            commits_url: starred.commits_url,
-            git_url: starred.git_url
+            html_url: starred.html_url
         });
         console.log(starred);
     }
 
     render() {
         let user;
-        let repositories;
-        let starred;
         if(this.state.username) {
             user =
             <div className="card">
@@ -158,13 +161,15 @@ class Aplication extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{this.state.name}</td>
-                                        <td>{this.state.description}</td>
-                                        <td>{this.state.size}</td>
-                                        <td>{this.state.language}</td>
-                                        <td>{this.state.url}</td>
-                                    </tr>
+                                    {this.state.infoRepos.map(repo => (
+                                        <tr>
+                                            <td>{repo.name}</td>
+                                            <td>{repo.description}</td>
+                                            <td>{repo.size}</td>
+                                            <td>{repo.language}</td>
+                                            <td><a href={repo.html_url} target="_blank">Ver Repositório Completo</a></td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
@@ -177,21 +182,21 @@ class Aplication extends React.Component {
                             <table className="table table-hover table-dark">
                                 <thead>
                                     <tr>
-                                        <th scope="col">LOGIN</th>
+                                        <th scope="col">NAME</th>
+                                        <th scope="col">DESCRIPTION</th>
                                         <th scope="col">ID</th>
-                                        <th scope="col">STARRED_URL</th>
-                                        <th scope="col">COMMITS_URL</th>
-                                        <th scope="col">GIT_URL</th>
+                                        <th scope="col">URL GITHUB</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{this.state.login}</td>
-                                        <td>{this.state.id}</td>
-                                        <td>{this.state.starred_url}</td>
-                                        <td>{this.state.commits_url}</td>
-                                        <td>{this.state.git_url}</td>
-                                    </tr>
+                                    {this.state.infoReposStar.map(repostars => (
+                                        <tr>
+                                            <td>{repostars.name}</td>
+                                            <td>{repostars.description}</td>
+                                            <td>{repostars.id}</td>
+                                            <td><a href={repostars.html_url} target="_blank">Ver no GitHub</a></td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
