@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import Slider from "react-slick";
 
 class Aplication extends React.Component {
     constructor() {
@@ -102,6 +103,16 @@ class Aplication extends React.Component {
     }
 
     render() {
+        const settings = {
+			dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            speed: 5000,
+            autoplaySpeed: 3000,
+            cssEase: "linear"
+		};
         let user;
         if(this.state.username) {
             user =
@@ -144,61 +155,40 @@ class Aplication extends React.Component {
                         <li className="following">
                             <p><label>Seguindo:</label> {this.state.following}</p>
                         </li>
-                        <ul>
-                            <li>
-                                <h1 className="h1 info-repos">Info Repositories</h1>
-                            </li>
-                        </ul>
-                        <div class="table-responsive">
-                            <table className="table table-hover table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">NAME</th>
-                                        <th scope="col">DESCRIPTION</th>
-                                        <th scope="col">SIZE</th>
-                                        <th scope="col">LANGUAGE</th>
-                                        <th scope="col">URL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.state.infoRepos.map(repo => (
-                                        <tr>
-                                            <td>{repo.name}</td>
-                                            <td>{repo.description}</td>
-                                            <td>{repo.size}</td>
-                                            <td>{repo.language}</td>
-                                            <td><a href={repo.html_url} target="_blank">Ver Repositório Completo</a></td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                        <div>                           
+                            <h1 className="h1 info-repos">Info Repositories</h1>                            
                         </div>
-                        <ul>
-                            <li>
-                                <h1 className="h1 info-starred">Info Starred</h1>
-                            </li>
-                        </ul>
-                        <div class="table-responsive">
-                            <table className="table table-hover table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">NAME</th>
-                                        <th scope="col">DESCRIPTION</th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">URL GITHUB</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.state.infoReposStar.map(repostars => (
-                                        <tr>
-                                            <td>{repostars.name}</td>
-                                            <td>{repostars.description}</td>
-                                            <td>{repostars.id}</td>
-                                            <td><a href={repostars.html_url} target="_blank">Ver no GitHub</a></td>
-                                        </tr>
+                        <div>
+                            <Slider {...settings}>                                                                       
+                                <div>
+                                    {this.state.infoRepos.map(repo => (
+                                        <div>
+                                            <p>{repo.name}</p>
+                                            <p>{repo.description}</p>
+                                            <p>{repo.size}</p>
+                                            <p>{repo.language}</p>
+                                            <p><a href={repo.html_url} target="_blank">Ver Repositório Completo</a></p>
+                                        </div>
                                     ))}
-                                </tbody>
-                            </table>
+                                </div>
+                            </Slider>
+                        </div>
+                        <div>                            
+                            <h2 className="h1 info-starred">Info Starred</h2>                            
+                        </div>
+                        <div>
+                            <Slider {...settings}>                                                                    
+                                <div>
+                                    {this.state.infoReposStar.map(repostars => (
+                                        <ul>
+                                            <li>{repostars.name}</li>
+                                            <li>{repostars.description}</li>
+                                            <li>{repostars.id}</li>
+                                            <li><a href={repostars.html_url} target="_blank">Ver no GitHub</a></li>
+                                        </ul>
+                                    ))}
+                                </div>
+                            </Slider>
                         </div>
                     </ul>
                 </div>
